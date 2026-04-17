@@ -1,18 +1,18 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
-template<typename T, int size>
+template<typename T, int MaxSize>
 class TStack {
-private:
-    T arr[size];
+ private:
+    T arr[MaxSize];
     int top_idx;
-public:
-    TStack() : top_idx(-1) {}   
+ public:
+    TStack() : top_idx(-1) {}
     void push(T value) {
-        if (top_idx < size - 1) {
+        if (top_idx < MaxSize - 1) {
             arr[++top_idx] = value;
         }
-    }  
+    }
     T pop() {
         if (top_idx >= 0) {
             return arr[top_idx--];
@@ -28,7 +28,7 @@ public:
     bool empty() const {
         return top_idx == -1;
     }
-    int size() const {
+    int getSize() const {
         return top_idx + 1;
     }
 };
