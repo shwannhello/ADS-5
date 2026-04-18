@@ -4,40 +4,34 @@
 
 template<typename T, int MaxSize>
 class TStack {
-  private:
+ private:
     T arr[MaxSize];
     int top_idx;
 
-  public:
+ public:
     TStack() : top_idx(-1) {}
-
     void push(T value) {
         if (top_idx < MaxSize - 1) {
             arr[++top_idx] = value;
         }
     }
-
     T pop() {
         if (top_idx >= 0) {
             return arr[top_idx--];
         }
         return T();
     }
-
     T top() const {
         if (top_idx >= 0) {
             return arr[top_idx];
         }
         return T();
     }
-
     bool empty() const {
         return top_idx == -1;
     }
-
     int getSize() const {
         return top_idx + 1;
     }
 };
-
-#endif  // INCLUDE_TSTACK_H_
+#endif
