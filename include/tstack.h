@@ -10,6 +10,7 @@ class TStack {
 
  public:
     TStack() : top_idx(-1) {}
+
     void push(T value) {
         if (top_idx < MaxSize - 1) {
             arr[++top_idx] = value;
@@ -34,4 +35,4 @@ class TStack {
         return top_idx + 1;
     }
 };
-#endif
+#endif  // INCLUDE_TSTACK_H_
