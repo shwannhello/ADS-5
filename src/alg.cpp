@@ -4,6 +4,7 @@
 #include <cctype>
 #include <sstream>
 #include "tstack.h"
+
 int getPriority(char op) {
     switch (op) {
         case '+':
